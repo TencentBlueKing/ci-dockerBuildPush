@@ -75,7 +75,7 @@
       "label": "DockerFile位置（workspace相对路径/Dockerfile）",
       "default": "Dockerfile",
       "type": "vuex-input",
-      "desc": " Dockerfile所在的位置及文件名称，不填默认为根目录下的Dockerfile；\n 公共镜像库地址为： http://bk.artifactory.oa.com ",
+      "desc": " Dockerfile所在的位置及文件名称，不填默认为根目录下的Dockerfile",
       "required": true,
       "disabled": false,
       "hidden": false,
