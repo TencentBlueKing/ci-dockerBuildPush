@@ -4,9 +4,8 @@ import com.tencent.bk.devops.atom.AtomContext
 import com.tencent.bk.devops.atom.task.DockerAtomParam
 import com.tencent.bk.devops.atom.task.pojo.DockerRepoTicketItem
 import com.tencent.bk.devops.atom.task.utils.DockerUtils
-import org.slf4j.Logger
-import org.slf4j.LoggerFactory
 import java.io.File
+import org.slf4j.LoggerFactory
 
 class ThirdPartyExecutor(private val atomContext: AtomContext<DockerAtomParam>) {
 
@@ -43,7 +42,6 @@ class ThirdPartyExecutor(private val atomContext: AtomContext<DockerAtomParam>) 
                     DockerUtils.dockerLogout(it, workspace)
                 }
             }
-
         }
     }
 
@@ -70,12 +68,11 @@ class ThirdPartyExecutor(private val atomContext: AtomContext<DockerAtomParam>) 
             if (!targetTicketId.isNullOrBlank()) {
                 val loginIp = targetImage.removePrefix("/").removeSuffix("/").split("/").first()
                 logger.info("login for target host: $loginIp")
-                DockerUtils.dockerLogin(loginIp, targetTicketId, workspace)
+                DockerUtils.dockerLogin(loginIp, targetTicketId!!, workspace)
                 logger.info("login successfully for host: $loginIp")
                 loginIps.add(loginIp)
             }
             return loginIps
         }
     }
-
 }

@@ -2,11 +2,11 @@ package com.tencent.bk.devops.atom.task.utils.shell
 
 import com.tencent.bk.devops.atom.task.pojo.AgentEnv
 import com.tencent.bk.devops.atom.task.pojo.OSType
+import java.io.File
 import org.apache.commons.exec.CommandLine
 import org.apache.commons.exec.LogOutputStream
 import org.apache.commons.exec.PumpStreamHandler
 import org.slf4j.LoggerFactory
-import java.io.File
 
 object CommandLineUtils {
 

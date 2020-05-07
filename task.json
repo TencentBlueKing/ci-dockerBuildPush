@@ -1,11 +1,11 @@
 {
-  "atomCode": "dockerBuildPush",
+  "atomCode": "dockerBuildPushtest",
   "execution": {
-    "packagePath": "dockerBuildPush-jar-with-dependencies.jar",
+    "packagePath": "dockerBuildPush.jar",
     "language": "java",
     "minimumVersion": "1.8",
     "demands": [],
-    "target": "java -jar dockerBuildPush-jar-with-dependencies.jar"
+    "target": "java -jar dockerBuildPush.jar"
   },
   "input": {
     "sourceMirrorTicketPair": {

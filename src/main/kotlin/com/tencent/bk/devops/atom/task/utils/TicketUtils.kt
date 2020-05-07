@@ -14,18 +14,18 @@ object TicketUtils {
 
         val ticket: Map<String, String>?
         try {
-            ticket = credentialApi.getCredential(ticketId).data
+            ticket = credentialApi.getCredential(ticketId!!).data
         } catch (e: Exception) {
-            throw RuntimeException("获取凭证 $ticketId 失败", e)
+            throw RuntimeException("failed to obtain credential, ticketId: $ticketId", e)
         }
 
         val username = ticket?.get("username")
         val password = ticket?.get("password")
 
-        if (ticket.isNullOrEmpty()) throw RuntimeException("the ticketId is error, please check your input......")
+        if (ticket.isEmpty()) throw RuntimeException("the ticketId is error, please check your input......")
         if (username.isNullOrEmpty()) throw RuntimeException("the username is error, please check your input......")
         if (password.isNullOrEmpty()) throw RuntimeException("the password is error, please check your input......")
 
-        return Pair(username, password)
+        return Pair(username!!, password!!)
     }
 }

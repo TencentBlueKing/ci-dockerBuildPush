@@ -20,12 +20,12 @@ class DockerAtomParam : AtomBaseParam() {
 
     override fun toString(): String {
         return "sourceMirrorTicketPair: $sourceMirrorTicketPair, \n" +
-            "targetImage: $targetImage, \n"+
-            "targetImageTag: $targetImageTag, \n"+
-            "targetTicketId: $targetTicketId, \n"+
-            "dockerBuildDir: $dockerBuildDir, \n"+
-            "dockerFilePath: $dockerFilePath, \n"+
-            "dockerBuildArgs: $dockerBuildArgs, \n"+
+            "targetImage: $targetImage, \n" +
+            "targetImageTag: $targetImageTag, \n" +
+            "targetTicketId: $targetTicketId, \n" +
+            "dockerBuildDir: $dockerBuildDir, \n" +
+            "dockerFilePath: $dockerFilePath, \n" +
+            "dockerBuildArgs: $dockerBuildArgs, \n" +
             "dockerBuildHosts: $dockerBuildHosts, \n"
     }
 }

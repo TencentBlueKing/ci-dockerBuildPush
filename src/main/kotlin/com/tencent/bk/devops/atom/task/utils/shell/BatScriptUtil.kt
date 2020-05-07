@@ -1,8 +1,8 @@
 package com.tencent.bk.devops.atom.task.utils.shell
 
-import org.slf4j.LoggerFactory
 import java.io.File
 import java.nio.charset.Charset
+import org.slf4j.LoggerFactory
 
 object BatScriptUtil {
     private val logger = LoggerFactory.getLogger(BatScriptUtil::class.java)

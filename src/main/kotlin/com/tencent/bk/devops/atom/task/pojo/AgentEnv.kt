@@ -1,15 +1,12 @@
 package com.tencent.bk.devops.atom.task.pojo
 
+import java.util.Locale
 import org.slf4j.LoggerFactory
-import java.util.*
 
 object AgentEnv {
 
     private val logger = LoggerFactory.getLogger(AgentEnv::class.java)
     private var os: OSType? = null
-
-
-
 
     fun getOS(): OSType {
         if (os == null) {
@@ -31,6 +28,4 @@ object AgentEnv {
         }
         return os!!
     }
-
-
 }

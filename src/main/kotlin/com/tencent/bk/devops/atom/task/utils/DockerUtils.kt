@@ -4,8 +4,8 @@ import com.tencent.bk.devops.atom.task.DockerAtomParam
 import com.tencent.bk.devops.atom.task.executor.ThirdPartyExecutor
 import com.tencent.bk.devops.atom.task.utils.TicketUtils.getTicketUserAndPass
 import com.tencent.bk.devops.atom.task.utils.shell.CommonShellUtils
-import org.slf4j.LoggerFactory
 import java.io.File
+import org.slf4j.LoggerFactory
 
 object DockerUtils {
 
