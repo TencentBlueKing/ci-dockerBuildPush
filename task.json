@@ -1,0 +1,140 @@
+{
+  "atomCode": "dockerBuildPush",
+  "execution": {
+    "packagePath": "dockerBuildPush-jar-with-dependencies.jar",
+    "language": "java",
+    "minimumVersion": "1.8",
+    "demands": [],
+    "target": "java -jar dockerBuildPush-jar-with-dependencies.jar"
+  },
+  "input": {
+    "sourceMirrorTicketPair": {
+      "label": "源仓库host、凭证键值对",
+      "default": [],
+      "type": "key-value-normal",
+      "desc": "Dockerfile中From的基础镜像仓库以及该host的凭证名称",
+      "required": false,
+      "disabled": false,
+      "hidden": false,
+      "isSensitive": false
+    },
+    "targetImage": {
+      "label": "目标镜像地址（含域名+路径）",
+      "default": "",
+      "placeholder": "例如：csighub.tencentyun.com/pathA/imageName",
+      "type": "vuex-input",
+      "required": true,
+      "disabled": false,
+      "hidden": false,
+      "isSensitive": false
+    },
+    "targetTicketId": {
+      "label": "目标镜像仓库凭证",
+      "desc": "登录到目标镜像仓库的凭证",
+      "default": "",
+      "placeholder": "请选择",
+      "type": "select-input",
+      "required": false,
+      "disabled": false,
+      "hidden": false,
+      "isSensitive": false,
+      "optionsConf": {
+        "searchable": true,
+        "clearable": true,
+        "multiple": false,
+        "url": "/ticket/api/user/credentials/{projectId}/hasPermissionList?permission=USE&page=1&pageSize=100&credentialTypes=USERNAME_PASSWORD",
+        "paramId": "credentialId",
+        "paramName": "credentialId",
+        "itemTargetUrl": "/ticket/{projectId}/createCredential/USERNAME_PASSWORD/true",
+        "itemText": "添加相应的凭证",
+        "hasAddItem": true
+      }
+    },
+    "targetImageTag": {
+      "label": "目标镜像tag",
+      "default": "latest",
+      "placeholder": "请输入目标镜像tag;大小写字母，数字，下划线，不能包含中划线",
+      "type": "vuex-input",
+      "desc": "大小写字母，数字，下划线，不能用中划线，不超过127个字符",
+      "required": true,
+      "disabled": false,
+      "hidden": false,
+      "isSensitive": false
+    },
+    "dockerBuildDir": {
+      "label": "Docker Build执行目录（workspace相对路径）",
+      "default": ".",
+      "type": "vuex-input",
+      "desc": " docker build 命令执行的路径  ",
+      "required": true,
+      "disabled": false,
+      "hidden": false,
+      "isSensitive": false
+    },
+    "dockerFilePath": {
+      "label": "DockerFile位置（workspace相对路径/Dockerfile）",
+      "default": "Dockerfile",
+      "type": "vuex-input",
+      "desc": " Dockerfile所在的位置及文件名称，不填默认为根目录下的Dockerfile；\n 公共镜像库地址为： http://bk.artifactory.oa.com ",
+      "required": true,
+      "disabled": false,
+      "hidden": false,
+      "isSensitive": false
+    },
+    "dockerBuildArgs": {
+      "label": "docker build build-arg参数的值，多个换行分隔",
+      "default": "",
+      "placeholder": "例如：key1=value1\nkey2=value2",
+      "type": "vuex-textarea",
+      "required": false,
+      "disabled": false,
+      "hidden": false,
+      "isSensitive": false
+    },
+    "dockerBuildHosts": {
+      "label": "docker build add-host参数的值，多个换行分隔（只支持第三方机器，暂不支持公共机）",
+      "type": "vuex-textarea",
+      "required": false,
+      "disabled": false,
+      "hidden": false,
+      "isSensitive": false
+    },
+    "targetRepoItemStr": {
+      "label": "targetRepoItem",
+      "default": [],
+      "type": "key-value-normal",
+      "required": false,
+      "disabled": false,
+      "hidden": false,
+      "isSensitive": false
+    },
+    "sourceRepoItemsStr": {
+      "label": "sourceRepoItems",
+      "default": [],
+      "type": "key-value-normal",
+      "desc": "",
+      "required": false,
+      "disabled": false,
+      "hidden": true,
+      "isSensitive": true
+    }
+  },
+  "output": {
+    "BK_DOCKER_TARGE_IMAGE_NAME": {
+      "description": "目标镜像地址",
+      "type": "string",
+      "props": {
+        "noticeMail": false
+      },
+      "isSensitive": false
+    },
+    "BK_DOCKER_TARGE_IMAGE_TAG": {
+      "description": "目标镜像Tag",
+      "type": "string",
+      "props": {
+        "noticeMail": false
+      },
+      "isSensitive": false
+    }
+  }
+}
