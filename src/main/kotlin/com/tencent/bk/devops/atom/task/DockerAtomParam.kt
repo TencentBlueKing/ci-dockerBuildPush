@@ -15,7 +15,6 @@ class DockerAtomParam : AtomBaseParam() {
     val dockerBuildDir: String? = null
     val dockerFilePath: String? = null
     var dockerBuildArgs: String? = null
-    val enableProxy: Boolean? = false
     val dockerBuildHosts: String? = null
 
     override fun toString(): String {

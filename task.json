@@ -98,25 +98,6 @@
       "disabled": false,
       "hidden": false,
       "isSensitive": false
-    },
-    "targetRepoItemStr": {
-      "label": "targetRepoItem",
-      "default": [],
-      "type": "key-value-normal",
-      "required": false,
-      "disabled": false,
-      "hidden": false,
-      "isSensitive": false
-    },
-    "sourceRepoItemsStr": {
-      "label": "sourceRepoItems",
-      "default": [],
-      "type": "key-value-normal",
-      "desc": "",
-      "required": false,
-      "disabled": false,
-      "hidden": true,
-      "isSensitive": true
     }
   },
   "output": {
